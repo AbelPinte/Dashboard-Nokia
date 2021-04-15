@@ -1,0 +1,44 @@
+body{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+*{
+  height: auto;
+  margin: 0 auto;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+h1{
+  color: black;
+  text-align: center;
+}
+
+.sidenav{
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a{
+  padding: 6px 8px 6px 16px;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  border-radius: 5px;
+}
+
+.sidenav a:hover{
+  border-radius: 5px;
+}
