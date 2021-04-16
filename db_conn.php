@@ -1,15 +1,13 @@
 <?php
-
   $sname = "localhost";
   $uname = "root";
   $password = "";
 
   $db_name = "project";
 
-  $conn = mysqli_connect($sname, $uname, $password, $db_name);
+  $conn = new mysqli($sname, $uname, $password, $db_name);
 
-  if(!$conn){
+  if($conn->connect_error){
     echo "Connection failed!";
   }
-
  ?>
