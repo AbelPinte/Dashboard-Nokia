@@ -19,26 +19,64 @@ h1{
   text-align: center;
 }
 
-.sidenav{
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+.sidenav {
+  overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
 }
 
-.sidenav a{
-  padding: 6px 8px 6px 16px;
-  font-size: 25px;
-  color: #ffffff;
-  display: block;
-  border-radius: 5px;
+
+.sidenav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.sidenav a:hover{
-  border-radius: 5px;
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.sidenav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#ticketsTable{
+  border-collapse: collapse;
+}
+
+#ticketsTable tr{
+  background-color: #eee;
+  border-top: 1px solid #fff;
+}
+
+#ticketsTable tr:hover{
+  background-color: #ccc;
+}
+
+#ticketsTable th{
+  background-color: #fff;
+  height: 70px;
+  width: 10%;
+}
+
+#ticketsTable th, #ticketsTable td {
+    padding: 3px 5px;
+    text-align: center;
+}
+#ticketsTable td:hover {
+    cursor: pointer;
+}
+
+.ticket-row{
+  cursor: pointer;
 }
