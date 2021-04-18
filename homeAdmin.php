@@ -21,17 +21,14 @@
       </div>
     </div>
 
-
-    <table >
+    <table id ="ticketsTable">
       <tr>
-        <td>Ticket number</td>
-        <td>Date</td>
-        <td>From</td>
-        <td>Subject</td>
-        <td>Description</td>
-        <td>Priority</td>
-        <td>Status</td>
-        <td>RCA</td>
+        <th>Ticket number</th>
+        <th>Date</th>
+        <th>From</th>
+        <th>Subject</th>
+        <th>Priority</th>
+        <th>Status</th>
       </tr>
       <?php
         $ticktetsSql = "select `id`, `date`, `from`, `subject`, `description`, `priority`, `status` from
@@ -43,14 +40,11 @@
         $sql->execute();
         $res = $sql->get_result();
 
-        $result = mysqli_query($conn, $ticktetsSql);
-
         if($res->num_rows > 0){
           $data = $res->fetch_all(MYSQLI_ASSOC);
           foreach($data as $row){
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["date"] . "</td><td>" . $row["from"] .
-              "</td><td>" . $row["subject"] . "</td><td>" . $row["description"] .
-                "</td><td>" . $row["priority"] . "</td><td>" . $row["status"] . "</td></tr>";
+            echo "<tr class = 'table-row' data-href = 'ticketsDetails.php'><td>" . $row["id"] . "</td><td>" . $row["date"] . "</td><td>" . $row["from"] .
+              "</td><td>" . $row["subject"] . "</td><td>"  . $row["priority"] . "</td><td>" . $row["status"] . "</td></tr>";
           }
 
         }else{
@@ -64,6 +58,19 @@
         <button  type = "submit">Add Ticket</button>
       </div>
     </form>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const rows = document.querySelectorAll("tr[data-href]");
+
+        rows.forEach(row => {
+          row.addEventListener("click", () => {
+            window.location.href =  row.dataset.href;
+          });
+        });
+        console.log(rows);
+      });
+
+    </script>
   </body>
 </html>
 
