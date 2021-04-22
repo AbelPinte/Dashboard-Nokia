@@ -9,7 +9,6 @@
     <div class = "logInForm">
     <form action = "login.php" method="post">
 
-
       <?php
         if(isset($_GET['error'])){
       ?>
@@ -26,16 +25,6 @@
       <label>Password</label>
       <input type = "password" name = "password" placeholder="Password">
       <br>
-
-
-        <select class = "form-control" name = "role">
-          <option value = "noSelection">Select role</option>
-          <option value = "admin">Admin</option>
-          <option value = "employee">Employee</option>
-          <option value = "user">User</option>
-        </select>
-
-
 
       <button type = "submit">Login</button>
 
