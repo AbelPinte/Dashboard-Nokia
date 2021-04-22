@@ -9,6 +9,7 @@
     <div class = "logInForm">
     <form action = "login.php" method="post">
 
+
       <?php
         if(isset($_GET['error'])){
       ?>
@@ -25,6 +26,11 @@
       <label>Password</label>
       <input type = "password" name = "password" placeholder="Password">
       <br>
+
+
+        
+
+
 
       <button type = "submit">Login</button>
 

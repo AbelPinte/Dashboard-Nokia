@@ -50,6 +50,7 @@
             echo "<tr class = 'table-row' data-href = '/project/ticketsDetails.php' id ='currentRow'><td>" . $row["id"] . "</td><td>" . $row["date"] . "</td><td>" . $row["from"] .
               "</td><td>" . $row["subject"] . "</td><td>"  . $row["priority"] . "</td><td>" . $row["status"] . "</td></tr>";
           }
+
         }else{
           echo "No tickets";
         }
@@ -62,17 +63,19 @@
     </form>
 
     <script>
+
         document.addEventListener("DOMContentLoaded", () => {
         const rows = document.querySelectorAll("tr[data-href]");
         rows.forEach(row => {
           row.addEventListener("click", () => {
               var ticketId = row.children[0].textContent;
               window.location.href =  row.dataset.href + "?id=" + ticketId;
+
           });
         });
       });
     </script>
-    
+
   </body>
 </html>
 
@@ -81,4 +84,7 @@
   header("Location: index.php");
   exit();
 }
-?>
+
+
+
+ ?>
